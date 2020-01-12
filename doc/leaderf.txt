@@ -1,0 +1,35 @@
+*LeaderF-firefox*
+
+INTRODUCTION~
+
+This plugin is an extension of LeaderF used to navigate Firefox's bookmarks
+and history.
+
+==============================================================================
+REQUIREMENTS~
+
+- vim7.4.330 or higher.
+- vim compiled with Python support, you can check by using `echo has('python')`
+  or `echo has('python3')` to see if the result is 1.
+==============================================================================
+OPTIONS~
+
+g:Lf_FirefoxDb                                               *g:Lf_FirefoxDb*
+    This option is a string that sets the location of the Firefox database
+    'places.sqlite'. The string can contain environment variables and will
+    also be glob-expanded. When the result creates several options, the first
+    one is selected.
+    Default value is: '~/.mozilla/firefox/*default*/places.sqlite'
+==============================================================================
+USAGE~
+
+:LeaderfFirefox                                              *LeaderfFirefox*
+    Launch LeaderF to navigate Firefox's bookmarks and history.
+
+:LeaderfFirefoxBookmarks                            *LeaderfFirefoxBookmarks*
+    Launch LeaderF to navigate Firefox's bookmarks.
+
+:LeaderfFirefoxHistory                                *LeaderfFirefoxHistory*
+    Launch LeaderF to navigate Firefox's history.
+==============================================================================
+vim:tw=78:ts=4:ft=help:norl

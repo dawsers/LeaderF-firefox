@@ -1,0 +1,83 @@
+* ***LeaderF-firefox
+
+** Introduction
+
+=LeaderF-firefox= is a package that provides a /Vim/ [[https://github.com/Yggdroot/LeaderF][LeaderF]] interface for
+Firefox bookmarks and history. It can be downloaded [[https://github.com/dawsers/LeaderF-firefox][here]].
+
+** Requirements
+
+=LeaderF-firefox= is an extension, so you need =LeaderF= to make it work.
+
+The package also needs [[https://docs.python.org/3/library/sqlite3.htm][python-sqlite3]] to be able to access the database
+containing bookmarks and history.
+
+
+** Custom Variables
+
+*** =g:Lf_FirefoxDb=
+
+This variable tries to guess where the Firefox database =places.sqlite= is, but
+the guess is not very elaborated. It may work OK on Linux systems, but for any
+other OS, it is probably better to set it manually.
+
+The default value is =~/.mozilla/firefox/*.default*/places.sqlite=.
+
+The value can include environment variables and it will also be
+glob-expanded. When this happens, the first expanded value is considered the
+database name.
+
+
+** Commands
+
+| *Command*                 | *Description*              |
+|---------------------------+----------------------------|
+| =LeaderfFirefox=          | List history and bookmarks |
+| =LeaderfFirefoxBookmarks= | List bookmarks             |
+| =LeaderfFirefoxHistory=   | List history               |
+
+There are no default mappings for any of the commands.
+
+The extension allows multiple selections using =s= to toggle any line and =c=
+to clear all the selections.
+
+When in the ===LeaderF= buffer, use =<F1>= for help. These are the bindings
+for immediate actions:
+
+| *Key*                 | *Description*                             |
+|-----------------------+-------------------------------------------|
+| =<CR>/double-click/o= | Open URL in default browser               |
+| =i/<TAB>=             | Switch to input mode                      |
+| =s=                   | Toggle selection                          |
+| =c=                   | Clear selections                          |
+| =t=                   | Open selection(s) in browser tab          |
+| =w=                   | Open selection(s) in a new browser window |
+| =y=                   | Yank selection(s) url(s)                  |
+| =q=                   | Quit                                      |
+| =<F1>=                | Toggle this help                          |
+
+
+** Highlighting
+
+There are three highlighting groups you can use to customize the look of the
+list: =Lf_hl_firefoxDate=, =Lf_hl_firefoxTitle= and =Lf_hl_firefoxUrl=. You
+can assign colors to them customizing your colorscheme, or through the usual
+=LeaderF= palette variables.
+
+
+** Installation
+
+Install using [[https://github.com/junegunn/vim-plug][Plug]].
+
+#+BEGIN_SRC vim
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'dawsers/LeaderF-firefox'
+
+" Default value, usually works on Linux systems
+" let g:Lf_FirefoxDb = '~/.mozilla/firefox/*.default*/places.sqlite'
+
+" There are no default keyboard bindings, these are an example
+nnoremap <silent> <leader>Ff :LeaderfFirefox
+nnoremap <silent> <leader>Fb :LeaderfFirefoxBookmarks
+nnoremap <silent> <leader>Fh :LeaderfFirefoxHistory
+#+END_SRC
