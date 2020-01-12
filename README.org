@@ -1,4 +1,4 @@
-* ***LeaderF-firefox
+* LeaderF-firefox
 
 ** Introduction
 
