@@ -9,7 +9,6 @@ from leaderf.utils import *
 from leaderf.explorer import *
 from leaderf.manager import *
 
-import ptvsd
 #*****************************************************
 # FirefoxExplorer
 #*****************************************************
