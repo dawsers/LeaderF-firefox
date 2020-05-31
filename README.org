@@ -9,8 +9,8 @@ Firefox bookmarks and history. It can be downloaded [[https://github.com/dawsers
 
 =LeaderF-firefox= is an extension, so you need =LeaderF= to make it work.
 
-The package also needs [[https://docs.python.org/3/library/sqlite3.htm][python-sqlite3]] to be able to access the database
-containing bookmarks and history.
+The package also needs [[https://www.sqlite.org/index.html][sqlite]] to be able to access the database
+containing bookmarks and history. Install it using your system's package manager.
 
 
 ** Custom Variables
